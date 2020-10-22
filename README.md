@@ -2,7 +2,11 @@
 
 ![](https://i.pinimg.com/originals/e0/dd/3b/e0dd3bf212283a91a392972aa59caf9c.jpg)
 
-Data structures are a variety of containers and organized data storage systems. Different data structures are well suited for serving different functions.
+Data structures are a variety of containers and organized data storage systems. Data structures are data organization, management, and storage formats with different usages and efficiencies. 
+
+*A data structure is a collection of data values, the relationships among them, and the functions or operations that can be applied to the data.*
+
+Different data structures are well suited for serving different functions.
 
 ## Arrays
 
@@ -171,6 +175,50 @@ With chaining, each value in the hash table is an array.  In the case of collisi
 - Used to implement database indexes
 - Used to implement associative arrays.
 
+## Graphs
+Graphs are non-linear systems of data points connected to each other. The data exists as a series of nodes, or vertices, connected to each other by edges.
+
+![](https://www.geeksforgeeks.org/wp-content/uploads/undirectedgraph.png)
+
+Graphs are often defined by the set of vertices and edges that they are comprised of.  In the example above, we would have a vertex list of:
+
+`V = [0,1,2,3,4]`
+
+and an edge list, or adjacency list, of 
+
+`E = [[0,1], [1,2], [2,3], [3,4], [0,4], [1,4], [1,3]]`
+
+You might also see them together, like this:
+
+	{
+	0:[1,4]
+	1:[0,2,3,4],
+	2:[1,3],
+	3:[1,2,4],
+	4:[0,1,3],
+	}
+
+### Basic functions
+
+- Addition/Removal of a vertex
+- Addition/Removal of an edge
+- Access vertex
+
+### Advantages of graphs
+
+- Make it easy to understand complex networks
+- Graphs can be used to find ideal paths between data
+- Graphs can be used to understand relationships between data
+
+### Disadvantages of graphs
+
+- Can be time and space intensive to traverse and map graphs
+
+### Uses of graphs
+
+- Used to represent networks like phone systems
+- Used to visualize connected on social media sites
+
 ## Trees
 Trees are a data structure where data is organized and linked hierarchically. The nodes, or leaves, in a tree can be linked to more than 1 other node.  There are many types of trees, one of the most common is the binary search tree.
 
@@ -202,3 +250,53 @@ Each node in a tree has at least 3 properties:
 
 - Used in many search applications where data is constantly entering and leaving.
 
+## Heaps
+Heaps are a special case of binary tree where each parent node has the same relationship with each of its child nodes.
+
+Two of the most common are:
+
+**Min-heap**
+
+![](https://www.tutorialspoint.com/data_structures_algorithms/images/min_heap_example.jpg)
+
+**Max-heap**
+
+![](https://www.tutorialspoint.com/data_structures_algorithms/images/max_heap_example.jpg)
+
+While heaps can be constructed using nodes, as we say for our binary tree, they are often made from arrays, as they can be easier to work with.
+
+The max heap above can be written as
+
+	[44,42,35,33,31,19,27,10,26,14]
+	
+in which each child node is at
+
+	(i+1)*2 or (i+1)*2-1
+
+where i is the index of the parent node.
+
+Similarly, each parent node is at
+
+	Math.floor((i-1)/2)
+	
+when i is the index of the child node.
+
+### Basic functions
+
+- Insert - Insert a node into the tree
+- Delete - Delete a node from the tree
+- Search - Find a node in the tree
+
+### Advantages of heaps
+
+- Inserting and remove nodes from a heap takes O(log(N)) time complexity
+
+### Disadvantages of heaps
+
+- Searching heaps can be costly
+- Many heaps require unique node values
+
+### Uses of heaps
+
+- Used in heapsort
+- Used for priority queues
